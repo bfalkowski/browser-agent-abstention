@@ -1,0 +1,12 @@
+[project]
+name = "browser-agent-abstention"
+version = "0.1.0"
+description = "Do LLM browser test agents refuse when they cannot tell which element is meant?"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "playwright",
+    "flask",
+    "mcp",
+    "anthropic",
+]
