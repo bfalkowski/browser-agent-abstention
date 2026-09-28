@@ -83,3 +83,7 @@ including every miss, for error analysis.
 - This work started as a looser comparison in
   [jev-experiments](https://github.com/bfalkowski/jev-experiments), which
   also has an interactive dashboard for watching the engines side by side.
+
+## License
+
+MIT. See `LICENSE`. SauceDemo is not included; it is built from its own public repository under its own license.
