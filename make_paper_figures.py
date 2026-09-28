@@ -125,7 +125,11 @@ def study2():
 
 
 def study3():
-    rows = [r for r in jl("results/live.jsonl") if not r.get("error") and r["task_id"] != "P-status-1007"]
+    from live_tasks import TASKS, score
+    tasks = {t["id"]: t for t in TASKS}
+    rows = [r for r in jl("results/live.jsonl") if not r.get("error") and r["task_id"] in tasks]
+    for r in rows:  # re-score with the current rules
+        r["outcome"] = score(tasks[r["task_id"]], r.get("events", []), r.get("refused", False))
     out = {}
     for e in ("jev", "haiku", "opus", "agent"):
         er = [r for r in rows if r["engine"] == e]
